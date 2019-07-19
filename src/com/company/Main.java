@@ -1,5 +1,7 @@
 package com.company;
 
+import com.abstractfactories.AcousticGuitarFactory;
+import com.abstractfactories.ClassicalGuitarFactory;
 import com.abstractfactories.ElectricGuitarFactory;
 import com.elements.Guitar;
 
@@ -24,5 +26,14 @@ public class Main {
         System.out.println("guitar4 specs:");
         System.out.println(     guitar4);
 
+        ClassicalGuitarFactory BadGuitarFactory = new ClassicalGuitarFactory("garbage","trash","N/A",24,22);
+        Guitar guitar5 = BadGuitarFactory.createGuitar();
+        System.out.println("guitar5 specs:");
+        System.out.println(     guitar5);
+
+        AcousticGuitarFactory WorseGuitarFactory = new AcousticGuitarFactory("junk","rubbish","N/A",24.5,150);
+        Guitar guitar6 = WorseGuitarFactory.createGuitar();
+        System.out.println("guitar6 specs:");
+        System.out.println(     guitar6);
     }
 }
